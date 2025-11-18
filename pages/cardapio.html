@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/teste.css">
+    <link rel="stylesheet" href="../css/cardapio.css">
+    <link rel="icon" href="../assets/logo_sem_fundo.png">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Lanche Mania - Cardápio</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="box-image">
+                <img src="../assets/logo_sem_fundo.png" alt="Lanche Mania" class="img_logo">
+            </div>
+
+            <ul id="nav_list" class="full-width">
+                <li class="nav-item">
+                    <a href="../pages/index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/cardapio.html">Cardápio</a>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="../pages/carrinho.html" class="carrinho-btn" id="carrinho_btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="carrinho_count" class="carrinho-count">0</span>
+                </a>
+                <div class="nav-buttons">
+                    <div id="userInfo">
+                    </div>
+                    <!-- <button id="mobile_btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button> -->
+                </div>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="index.html">Início</a>
+                </li>
+                <li class=" nav-item">
+                        <a href="cardapio.html">Cardápio</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
+        </nav>
+        <div class="dropdown-overlay" id="dropdownOverlay"></div>
+    </header>
+
+    <main id="content">
+        <section id="menu">
+            <div id="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar no cardápio...">
+                <button id="searchBtn"><i class="fa-solid fa-search"></i></button>
+            </div>
+            <!-- SALGADOS -->
+            <h3 class="section-subtitle-card">Salgados</h3>
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/coxinha.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Coxinha
+                    </h3>
+
+                    <span class="dish-description">
+                        A clássica e irresistível coxinha, com massa leve e douradinha, recheada com frango desfiado
+                        temperado na medida certa.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(2000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$6,50</h4>
+                        <button class="btn-default" data-id="coxinha" data-nome="Coxinha" data-preco="6.50"
+                            data-imagem="../assets/coxinha.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/pao-de-queijo.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Pão de Queijo
+                    </h3>
+
+                    <span class="dish-description">
+                        Pão macio e levemente selado, hambúrguer suculento preparado na hora, queijo derretido e
+                        acompanhamentos frescos.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(5000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$4,50</h4>
+                        <button class="btn-default" data-id="pão de queijo" data-nome="Pão de Queijo" data-preco="4.50"
+                            data-imagem="../assets/pao-de-queijo.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/joelho.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Joelho
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa macia, presunto suculento e queijo derretido no ponto certo. Um clássico recheado com
+                        sabor e aquele toque caseiro irresistível.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(1200+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$8,00</h4>
+                        <button class="btn-default" data-id="joelho" data-nome="Joelho" data-preco="8.00"
+                            data-imagem="../assets/joelho.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/enroladinho.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Enroladinho de Salsicha
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa fofinha e dourada, envolvendo uma salsicha bem saborosa. Simples, clássico e sempre
+                        delicioso.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(2500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$5,50</h4>
+                        <button class="btn-default" data-id="enroladinho" data-nome="Enroladinho de Salsicha"
+                            data-preco="5.50" data-imagem="../assets/enroladinho.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- LANCHES -->
+            <h3 class="section-subtitle-card">Lanches</h3>
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/hamburguer_artesanal.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Hambúrguer do Chefe
+                    </h3>
+
+                    <span class="dish-description">
+                        Um hambúrguer enorme, com carne suculenta, muito queijo e todos os ingredientes frescos. Sabor
+                        marcante e aquele visual de dar água na boca.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(18000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$25,50</h4>
+                        <button class="btn-default" data-id="hamb" data-nome="Hambúrguer do Chefe" data-preco="25.50"
+                            data-imagem="../assets/hamburguer_artesanal.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/hamburguer.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        X-Burguer
+                    </h3>
+
+                    <span class="dish-description">
+                        Pão macio e levemente selado, hambúrguer suculento preparado na hora, queijo derretido e
+                        acompanhamentos frescos.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(9000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$15,00</h4>
+                        <button class="btn-default" data-id="hamb" data-nome="X-Burguer" data-preco="15.00"
+                            data-imagem="../assets/hamburguer.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/hamburguer_frango.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Hambúrguer de Frango
+                    </h3>
+
+                    <span class="dish-description">
+                        Hambúrguer de frango bem temperado, suculento e levinho, com queijo derretido e complementos
+                        frescos. Sabor delicioso em cada mordida.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(6200+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$19,50</h4>
+                        <button class="btn-default" data-id="hamb" data-nome="Hambúrguer de Frango" data-preco="19.50"
+                            data-imagem="../assets/hamburguer_frango.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/hotdog.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Hot-Dog
+                    </h3>
+
+                    <span class="dish-description">
+                        Pão fofinho, salsicha saborosa e os melhores complementos: batata palha, molhos especiais,
+                        milho, ervilha e queijo ralado.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(2500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$9,50</h4>
+                        <button class="btn-default" data-id="dog" data-nome="Hot-Dog" data-preco="9.50"
+                            data-imagem="../assets/hotdog.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- BEBIDAS-->
+            <h3 class="section-subtitle-card">Bebidas</h3>
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/suco_maracuja.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Suco de Maracujá
+                    </h3>
+
+                    <span class="dish-description">
+                        Suco refrescante de maracujá, preparado com a polpa bem madura, trazendo o equilíbrio ideal
+                        entre o doce e o azedinho. Natural, leve e cheio de sabor, perfeito para matar a sede e renovar
+                        as energias, energia e frescor em momento feliz do seu dia
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(1000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$ 7,50</h4>
+                        <button class="btn-default" data-id="sucos" data-nome="Suco de Maracujá" data-preco="7.50"
+                            data-imagem="../assets/suco_maracuja.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/sucodemoranguinho.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Suco de Morango
+                    </h3>
+
+                    <span class="dish-description">
+                        Um suco geladinho feito com morangos frescos e bem docinhos, com sabor intenso e uma textura
+                        suave que desce fácil. Refrescante na medida certa, é a escolha perfeita para quem busca um
+                        sabor natural e delicioso a qualquer hora do dia
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(1600+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$9,50</h4>
+                        <button class="btn-default" data-id="sucos" data-nome="Suco de Morango" data-preco="9.50"
+                            data-imagem="../assets/suco_morango.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/suco_abacaxi.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Suco de Abacaxi com Hortelã
+                    </h3>
+
+                    <span class="dish-description">
+                        Suco geladinho preparado com abacaxi fresco e um toque especial de hortelã, trazendo leveza e
+                        refrescância em cada gole. Com um sabor tropical equilibrado, é perfeito para quem quer algo
+                        saboroso, aromático e super revigorante e pra adoçar seu dia
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(7000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$6,00</h4>
+                        <button class="btn-default" data-id="sucos" data-nome="Suco de Abacaxi com Hortelã"
+                            data-preco="6.00" data-imagem="../assets/suco_abacaxi.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/suco_laranja.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Suco de Laranja
+                    </h3>
+
+                    <span class="dish-description">
+                        Suco natural feito com laranjas frescas e bem docinhas, garantindo um sabor leve, refrescante e
+                        cheio de energia. Rico em vitaminas e com aquele gostinho cítrico perfeito, é ideal para
+                        acompanhar qualquer momento do dia com muito frescor.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(3300+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$5,00</h4>
+                        <button class="btn-default" data-id="sucos" data-nome="Suco de Laranja" data-preco="5.00"
+                            data-imagem="../assets/suco_laranja.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- DOCES -->
+            <h3 class="section-subtitle-card">Doces</h3>
+            <div id="dishes">
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/bolo_morango.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Bolo de Morango
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa fofinha, recheio cremoso e morangos frescos que dão aquele toque doce e irresistível. Um
+                        bolo leve, saboroso e cheio de frescor.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(2000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$11,50</h4>
+                        <button class="btn-default" data-id="doces" data-nome="Bolo de Morango" data-preco="11.50"
+                            data-imagem="../assets/bolo_morango.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/rocambole_doce_leite.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Rocambole de Doce de Leite
+                    </h3>
+
+                    <span class="dish-description">
+                        Massa leve e macia, enrolada com um doce de leite cremoso e irresistível. Uma combinação
+                        clássica que derrete na boca.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(5000+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$7,50</h4>
+                        <button class="btn-default" data-id="doces" data-nome="Rocambole de Doce de Leite"
+                            data-preco="7.50" data-imagem="../assets/rocambole_doce_leite.png"
+                            onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/milkshake.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Milk-Shake
+                    </h3>
+
+                    <span class="dish-description">
+                        Cremoso, geladinho e irresistível! Nosso milk-shake é preparado com sorvete de alta qualidade e
+                        coberturas especiais que dão aquele toque final.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(1200+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$13,00</h4>
+                        <button class="btn-default" data-id="doces" data-nome="Milk-Shake" data-preco="13.00"
+                            data-imagem="../assets/milkshake.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dish">
+                    <div class="dish-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <img src="../assets/brigadeiro.png" class="dish-image" alt="">
+
+                    <h3 class="dish-title">
+                        Brigadeiro de Chocolate
+                    </h3>
+
+                    <span class="dish-description">
+                        Brigadeiro cremoso, feito com chocolate de qualidade e enrolado no granulado. Clássico, macio e
+                        irresistível em cada mordida.
+                    </span>
+
+                    <div class="dish-rate">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <span>(2500+)</span>
+                    </div>
+
+                    <div class="dish-price">
+                        <h4>R$3,50</h4>
+                        <button class="btn-default" data-id="doces" data-nome="Brigadeiro de Chocolate"
+                            data-preco="3.50" data-imagem="../assets/brigadeiro.png" onclick="adicionarProduto(this)">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="../assets/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Lanche Mania
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function adicionarAoCarrinhoGenerico(id, nome, preco, imagem) {
+            adicionarAoCarrinho({ id, nome, preco, imagem });
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../js/carrinho.js" defer></script>
+    <script src="../js/cardapio.js" defer></script>
+    <script src="../js/mobile-cardp.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="../js/mobile.js"></script>
+    <script src="../js/login.js" defer></script>
+</body>
+
+</html>

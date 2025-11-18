@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/carrinho.css">
+    <link rel="icon" href="../assets/logo_sem_fundo.png">
+    
+    <title>Lanche Mania - Carrinho</title>
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="box-image">
+                <img src="../assets/logo_sem_fundo.png" alt="Lanche Mania" class="img_logo">
+            </div>
+
+            <ul id="nav_list" class="full-width">
+                <li class="nav-item btn-highlight">
+                    <a href="../pages/index.html">Início</a>
+                </li>
+                <li class="nav-item active">
+                    <a href="../pages/cardapio.html">Cardápio</a>
+                </li>
+            </ul>
+            
+            <div class="nav-buttons">
+                <a href="../pages/carrinho.html" class="carrinho-btn" id="carrinho_btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="carrinho_count" class="carrinho-count">0</span>
+                </a>
+              <div class="nav-buttons">
+                    <div id="userInfo">
+                    </div>
+                    <!-- <button id="mobile_btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button> -->
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="../pages/index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/cardapio.html">Cardápio</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <main id="content">
+        <section id="carrinho">
+            <h2 class="section-title">Meu Carrinho</h2>
+            
+            <div id="carrinho-container">
+                <div id="carrinho-vazio" class="carrinho-mensagem">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h3>Seu carrinho está vazio</h3>
+                    <p>Adicione alguns produtos</p>
+                    <a href="../pages/cardapio.html" class="btn-default">Voltar às Compras</a>
+                </div>
+
+                <div id="carrinho-com-itens" style="display: none;">
+                    <div class="carrinho-header">
+                        <h3>Itens do Pedido</h3>
+                    </div>
+                    
+                    <table id="tabela-carrinho">
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço Unitário</th>
+                                <th>Quantidade</th>
+                                <th>Subtotal</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="corpo-tabela">
+                        </tbody>
+                    </table>
+
+                    <div id="resumo-pedido">
+                        <div class="resumo-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="resumo-item total">
+                            <span>Total:</span>
+                            <span id="total">R$ 0,00</span>
+                        </div>
+                        
+                        <div id="botoes-acao">
+                            <a href="../pages/cardapio.html" class="btn-secondary">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Continuar Comprando
+                            </a>
+                            <button id="finalizar-pedido" class="btn-primary">
+                                Finalizar Pedido
+                                <i class="fa-solid fa-credit-card"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="../assets/wave.svg" alt="">
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2025 Lanche Mania
+            </span>
+            <div class="social-media-buttons">
+                <a href="">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+<script src="../js/mobile.js"></script>
+<script src="../js/carrinho.js"></script>
+<script src="../js/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,263 @@
+#carrinho {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carrinho-mensagem {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin: 2rem 0;
+}
+
+.carrinho-mensagem i {
+    font-size: 4rem;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.carrinho-mensagem h3 {
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.carrinho-mensagem p {
+    color: #000000;
+    margin-bottom: 2rem;
+}
+
+.carrinho-header {
+    background: #e9a209;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0;
+}
+
+#tabela-carrinho {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+}
+
+#tabela-carrinho th {
+    background: #e9a209;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+#tabela-carrinho td {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    vertical-align: middle;
+}
+
+#tabela-carrinho tr:last-child td {
+    border-bottom: none;
+}
+
+.item-produto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-imagem {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantidade-btn {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.quantidade-btn:hover {
+    background: transparent;
+    border: 2px solid var(--color-primary-5);
+}
+
+
+.quantidade-input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    padding: 0.25rem;
+}
+
+.remover-btn {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.remover-btn:hover {
+    background: transparent;
+    border: 2px solid var(--color-primary-5);
+}
+
+#resumo-pedido {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+}
+
+.resumo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.resumo-item.total {
+    border-bottom: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #dee2e6;
+}
+
+#botoes-acao {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    border: 2px solid var(--color-primary-5);
+}
+
+.btn-secondary {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: transparent;
+    border: 2px solid var(--color-primary-5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #carrinho {
+        padding: 1rem;
+    }
+    
+    #tabela-carrinho {
+        font-size: 0.9rem;
+    }
+    
+    #tabela-carrinho th,
+    #tabela-carrinho td {
+        padding: 0.5rem;
+    }
+    
+    .item-produto {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    #botoes-acao {
+        flex-direction: column;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        justify-content: center;
+    }
+}
+
+#mobile_menu {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    z-index: 999;
+    border-bottom: 1px solid #ddd;
+}
+
+#mobile_menu.active {
+    display: block;
+}
+
+#mobile_menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+#mobile_menu li {
+    padding: 10px 0;
+}
+
+#mobile_menu a {
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#mobile_btn.active{
+    display: block;
+}

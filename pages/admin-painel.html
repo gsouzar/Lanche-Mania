@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/admin-painel.css">
+    <link rel="icon" href="../assets/logo_sem_fundo.png">
+    <title>Lanche Mania - Painel Admin</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="box-image">
+                <img src="../assets/logo_sem_fundo.png" alt="Lanche Mania" class="img_logo">
+            </div>
+
+            <ul id="nav_list" class="full-width">
+                <li class="nav-item">
+                    <a href="../pages/index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../pages/cardapio.html">Cardápio</a>
+                </li>
+            </ul>
+            <div class="nav-buttons">
+                <div class="nav-buttons">
+                    <div id="userInfo">
+                    </div>
+                    <button id="mobile_btn">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+        </nav>
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="index.html">Início</a>
+                </li>
+                <li class=" nav-item">
+                        <a href="cardapio.html">Cardápio</a>
+                </li>
+                <li class=" nav-item">
+                        <a href="carrinho.html">Carrinho</a>
+                </li>
+                <li class=" nav-item">
+                        <a href="checkout.html">Pagamento</a>
+                </li>
+                <li class=" nav-item">
+                        <a href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        </div>
+        </nav>
+        <div class="dropdown-overlay" id="dropdownOverlay"></div>
+    </header>
+
+    <main id="content">
+        <section id="admin-section">
+            <div class="admin-container">
+                <!-- Header do Painel -->
+                <div class="admin-header">
+                    <h1><i class="fa-solid fa-chart-line"></i> Lanche Mania</h1>
+                    <p>Adminstração</p>
+                </div>
+
+                <!-- Cards de Estatísticas -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>R$ 2.847,50</h3>
+                            <p>Faturamento Hoje</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>47</h3>
+                            <p>Pedidos Hoje</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>23</h3>
+                            <p>Clientes Ativos</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>4.8</h3>
+                            <p>Avaliação Média</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gráficos -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Vendas por Categoria</h3>
+                        <canvas id="categoryChart"></canvas>
+                    </div>
+
+                    <div class="chart-card">
+                        <h3>Faturamento Mensal</h3>
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Pedidos Recentes -->
+                <div class="recent-orders">
+                    <h3>Pedidos Recentes</h3>
+                    <div class="orders-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Pedido #</th>
+                                    <th>Cliente</th>
+                                    <th>Itens</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#00123</td>
+                                    <td>João Silva</td>
+                                    <td>X-Burger + Coca</td>
+                                    <td>R$ 25,90</td>
+                                    <td><span class="status preparing">Preparando</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#00122</td>
+                                    <td>Maria Santos</td>
+                                    <td>Pizza Média</td>
+                                    <td>R$ 42,00</td>
+                                    <td><span class="status delivered">Entregue</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#00121</td>
+                                    <td>Pedro Costa</td>
+                                    <td>2 X-Bacon + Fritas</td>
+                                    <td>R$ 38,50</td>
+                                    <td><span class="status pending">Pendente</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+<div class="quick-actions">
+    <h3><i class=""></i> Ações Rápidas</h3>
+    <div class="actions-grid">
+        <button class="action-btn" onclick="openProductModal()">
+            <i class="fa-solid fa-burger"></i>
+            <span>Novo Produto</span>
+            <small>Adicionar item ao cardápio</small>
+        </button>
+        
+        <button class="action-btn" onclick="openPromotionModal()">
+            <i class="fa-solid fa-tag"></i>
+            <span>Nova Promoção</span>
+            <small>Criar oferta especial</small>
+        </button>
+        
+        <button class="action-btn" onclick="viewReports()">
+            <i class="fa-solid fa-chart-bar"></i>
+            <span>Relatórios</span>
+            <small>Ver análises detalhadas</small>
+        </button>
+        
+        <button class="action-btn" onclick="manageStock()">
+            <i class="fa-solid fa-boxes-stacked"></i>
+            <span>Estoque</span>
+            <small>Gerenciar inventário</small>
+        </button>
+        
+        <button class="action-btn" onclick="manageOrders()">
+            <i class="fa-solid fa-list-check"></i>
+            <span>Pedidos</span>
+            <small>Gerenciar pedidos</small>
+        </button>
+        
+        <button class="action-btn" onclick="manageUsers()">
+            <i class="fa-solid fa-users-gear"></i>
+            <span>Clientes</span>
+            <small>Gerenciar usuários</small>
+        </button>
+        
+        <button class="action-btn" onclick="openFinanceModal()">
+            <i class="fa-solid fa-money-bill-trend-up"></i>
+            <span>Financeiro</span>
+            <small>Contas e fluxo de caixa</small>
+        </button>
+        
+        <button class="action-btn" onclick="systemSettings()">
+            <i class="fa-solid fa-sliders"></i>
+            <span>Configurações</span>
+            <small>Configurar sistema</small>
+        </button>
+    </div>
+</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="../assets/wave.svg" alt="">
+        <div id="footer_items">
+            <span id="copyright">&copy 2025 Lanche Mania</span>
+            <div class="social-media-buttons">
+                <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/admin-painel.js"></script>
+</body>
+</html>

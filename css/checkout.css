@@ -1,0 +1,419 @@
+/* Estilos para a página de checkout */
+#checkout {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.section-title {
+    background: var(--color-primary-6);
+    color: white;
+    padding: 1.5rem;
+    margin: 0;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.order-summary,
+.payment-form {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.order-summary h3,
+.payment-form h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-primary-6);
+}
+
+/* Itens do pedido */
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.item-info h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.item-info .item-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.item-quantity {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.item-total {
+    font-weight: 600;
+    color: var(--color-primary-6);
+}
+
+/* Totais */
+.order-totals {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid #dee2e6;
+}
+
+.total-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.grand-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary-6);
+    border-top: 1px solid #dee2e6;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+/* Formulário */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary-6);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Métodos de pagamento */
+.payment-methods {
+    margin: 1.5rem 0;
+}
+
+.payment-option {
+    margin-bottom: 0.5rem;
+}
+
+.payment-option input[type="radio"] {
+    display: none;
+}
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-option label:hover {
+    border-color: var(--color-primary-6);
+}
+
+.payment-option input[type="radio"]:checked+label {
+    border-color: var(--color-primary-6);
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.payment-option i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--color-primary-6);
+}
+
+/* Botão de pagamento */
+.btn-payment {
+    width: 100%;
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 1.2rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-payment:hover {
+    background: transparent;
+    border: 2px solid var(--color-primary-5);
+}
+
+.btn-payment:disabled {
+    background-color: var(--color-primary-5);
+    cursor: not-allowed;
+}
+
+/* Modal de confirmação */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: rgb(255, 255, 255);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.modal-content i {
+    font-size: 3rem;
+    color: var(--color-primary-6);
+    margin-bottom: 1rem;
+}
+
+.modal-content h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.modal-buttons .btn-default {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-buttons .btn-default:hover {
+    background: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--color-primary-5);
+}
+
+.modal-buttons .btn-primary {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-buttons .btn-primary:hover {
+    background: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--color-primary-5);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 2rem;
+}
+
+.empty-cart i {
+    font-size: 3rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.empty-cart .btn-default {
+    background-color: var(--color-primary-5);
+    color: rgb(0, 0, 0);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.empty-cart .btn-default:hover {
+    background: transparent;
+    color: rgb(0, 0, 0);
+    border: 2px solid var(--color-primary-5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #checkout {
+        padding: 1rem;
+    }
+
+    .checkout-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .payment-option label {
+        padding: 0.75rem;
+    }
+}
+
+/* Adicione estas regras ao final do checkout.css */
+
+/* Campos de pagamento */
+#card-fields,
+#cash-fields {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+/* Melhorar a aparência dos inputs de cartão */
+#card-number,
+#card-expiry,
+#card-cvv,
+#card-name,
+#change {
+    background: white;
+    border: 1px solid #ced4da;
+}
+
+#card-number:focus,
+#card-expiry:focus,
+#card-cvv:focus,
+#card-name:focus,
+#change:focus {
+    border-color: var(--color-primary-6);
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+/* Loading spinner */
+.fa-spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Validação de campos */
+.form-group input:invalid {
+    border-color: #dc3545;
+}
+
+.form-group input:valid {
+    border-color: #28a745;
+}
+
+/* Responsividade para campos de cartão */
+@media (max-width: 480px) {
+
+    #card-fields,
+    #cash-fields {
+        padding: 0.75rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
