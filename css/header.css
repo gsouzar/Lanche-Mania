@@ -33,8 +33,7 @@ header {
     display: flex;
     list-style: none;
     gap: 48px;
-    margin-left: -46px;
-
+    margin-left: -20px;
 }
 
 .nav-item a {
@@ -43,14 +42,13 @@ header {
     font-weight: 600;
     position: relative;
     padding-bottom: 5px;
-    transition: all.3s;
+    transition: all .3s;
 }
 
 .nav-item a:hover {
     color: #000000;
 }
 
-/* efeito da barrinha */
 .nav-item a::after {
     content: "";
     position: absolute;
@@ -59,12 +57,10 @@ header {
     width: 0%;
     height: 3px;
     background: var(--color-primary-4);
-    /* cor da barrinha */
     transition: width 0.3s ease;
     border-radius: 2px;
 }
 
-/* quando a section está ativa */
 .nav-item.active a {
     color: var(--color-neutral-1);
 }
@@ -80,6 +76,10 @@ header {
 #mobile_menu {
     display: none;
 }
+
+/* ---------------------- */
+/* RESPONSIVIDADE GERAL   */
+/* ---------------------- */
 
 @media screen and (max-width: 1170px) {
     #navbar {
@@ -99,7 +99,6 @@ header {
     .box-image,
     #nav_list,
     .nav-buttons {
-
         max-width: 200px;
     }
 
@@ -135,9 +134,44 @@ header {
         list-style: none;
         text-align: center;
     }
+
+    .user-logged {
+        font-size: 12px;
+        padding: 5px 8px;
+        gap: 6px;
+        max-width: 140px;
+        justify-content: center;
+        white-space: nowrap;
+    }
+
+    .user-dropdown-content {
+        right: 50%;
+        transform: translateX(50%);
+        min-width: 140px;
+    }
 }
 
-/* Estilos para o ícone do carrinho */
+/* ---------------------- */
+/* MOBILE 760px           */
+/* ---------------------- */
+
+@media screen and (max-width: 760px) {
+    .user-logged {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .user-dropdown-content {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
+}
+
+/* Estilos do carrinho */
 .nav-buttons {
     display: flex;
     align-items: center;
@@ -146,7 +180,6 @@ header {
 
 .carrinho-btn {
     position: relative;
-    /* <-- Adicionado */
     background-color: var(--color-primary-5);
     color: rgb(0, 0, 0);
     padding: 10px 14px;
@@ -194,11 +227,10 @@ header {
     padding: 1rem;
 }
 
-/* Notificação geral (caso você tenha outra popup de aviso) */
+/* Notificação */
 .notification {
     position: fixed;
     bottom: 30px;
-    /* Mudamos pra baixo pra não cobrir o topo */
     right: 30px;
     background-color: var(--color-primary-5);
     color: rgb(0, 0, 0);
@@ -221,23 +253,15 @@ header {
     font-size: 1.2rem;
 }
 
-/* Animação do ícone do carrinho */
+/* Animação */
 .carrinho-pulse {
     animation: pulse 0.5s ease-in-out;
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .user-logged {
@@ -266,7 +290,7 @@ header {
     font-size: 14px;
 }
 
-/* Menu dropdown para logout */
+/* DROPDOWN */
 .user-dropdown {
     position: relative;
     display: inline-block;
